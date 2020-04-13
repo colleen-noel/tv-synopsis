@@ -1,0 +1,21 @@
+html
+  include partials/head
+
+  body
+    h1 Kim's Convenience
+    div
+    h2(class='season')='Season' + ' ' + season.number 
+    table(cellspacing = 0)
+      tr
+        th(class='episode headerColor' id='no') No.
+        th(class='episode headerColor' id='title') Title
+        th(class='episode headerColor' id='director') Director
+    
+      for episode in season.episodes
+        tr
+          td(class='number')=episode.number
+          td(class='episode')=episode.title
+          td(class='episode')=episode.director
+        tr
+          td(colspan = 3, class='synopsis')=episode.synopsis
+        
